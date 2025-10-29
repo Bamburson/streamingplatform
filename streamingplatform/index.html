@@ -10,13 +10,43 @@
 <body>
   <header class="header">
     <div class="header-inner">
-      <div class="logo">ModernFlix</div>
-      <div class="search-center">
-        <input type="search" placeholder="Szukaj filmów..." id="search-input">
+      <a href="#hero" class="logo" aria-label="ModernFlix - strona główna">ModernFlix</a>
+      <nav class="main-nav" aria-label="Główne">
+        <a href="#hero" class="nav-link active">Strona Główna</a>
+        <a href="#series" class="nav-link">Seriale</a>
+        <a href="#movies" class="nav-link">Filmy</a>
+        <a href="#watchlist" class="nav-link">Moja lista</a>
+      </nav>
+      <div class="header-actions">
+        <div class="search-wrapper" data-open="false">
+          <button class="icon-btn search-toggle" type="button" aria-expanded="false" aria-controls="header-search" aria-label="Otwórz wyszukiwarkę">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M15.5 14h-.79l-.28-.27a6.471 6.471 0 0 0 1.57-4.23 6.5 6.5 0 1 0-6.5 6.5 6.471 6.471 0 0 0 4.23-1.57l.27.28v.79l4.99 4.99 1.49-1.49L15.5 14Zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14Z" fill="currentColor"/>
+            </svg>
+          </button>
+          <div class="search-popover" id="header-search" role="dialog" aria-modal="false">
+            <input type="search" placeholder="Szukaj filmów..." id="search-input" autocomplete="off">
+          </div>
+        </div>
+        <div class="account-wrapper" data-open="false">
+          <button class="icon-btn account-toggle" type="button" aria-expanded="false" aria-controls="account-panel" aria-label="Otwórz panel konta">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5Zm0 2c-3.33 0-10 1.67-10 5v3h20v-3c0-3.33-6.67-5-10-5Z" fill="currentColor"/>
+            </svg>
+          </button>
+          <div class="account-panel" id="account-panel" role="menu" aria-label="Panel konta">
+            <div class="account-panel-header">
+              <div class="account-name">Katarzyna Kowalska</div>
+              <div class="account-email">katarzyna@modernflix.com</div>
+            </div>
+            <ul class="account-menu">
+              <li><a href="#">Zarządzaj kontem</a></li>
+              <li><a href="#">Centrum pomocy</a></li>
+            </ul>
+            <button class="logout-btn" type="button">Wyloguj się</button>
+          </div>
+        </div>
       </div>
-      <button class="profile-btn">
-        <div class="profile-avatar">K</div>
-      </button>
     </div>
   </header>
 
@@ -34,31 +64,52 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="series">
     <h3>Popularne</h3>
-    <div class="slider-wrapper">
-      <button class="arrow-btn arrow-left">←</button>
+    <div class="slider-wrapper" data-row="popular">
+      <button class="arrow-btn arrow-left" type="button" aria-label="Przewiń w lewo">
+        <span class="arrow-icon">‹</span>
+      </button>
       <div class="slider" id="popular-row"></div>
-      <button class="arrow-btn arrow-right">→</button>
+      <button class="arrow-btn arrow-right" type="button" aria-label="Przewiń w prawo">
+        <span class="arrow-icon">›</span>
+      </button>
+      <div class="slider-detail" id="popular-detail" aria-live="polite"></div>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="movies">
     <h3>Nowości</h3>
-    <div class="slider-wrapper">
-      <button class="arrow-btn arrow-left">←</button>
+    <div class="slider-wrapper" data-row="new">
+      <button class="arrow-btn arrow-left" type="button" aria-label="Przewiń w lewo">
+        <span class="arrow-icon">‹</span>
+      </button>
       <div class="slider" id="new-row"></div>
-      <button class="arrow-btn arrow-right">→</button>
+      <button class="arrow-btn arrow-right" type="button" aria-label="Przewiń w prawo">
+        <span class="arrow-icon">›</span>
+      </button>
+      <div class="slider-detail" id="new-detail" aria-live="polite"></div>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="recommended">
     <h3>Polecane</h3>
-    <div class="slider-wrapper">
-      <button class="arrow-btn arrow-left">←</button>
+    <div class="slider-wrapper" data-row="recommended">
+      <button class="arrow-btn arrow-left" type="button" aria-label="Przewiń w lewo">
+        <span class="arrow-icon">‹</span>
+      </button>
       <div class="slider" id="recommended-row"></div>
-      <button class="arrow-btn arrow-right">→</button>
+      <button class="arrow-btn arrow-right" type="button" aria-label="Przewiń w prawo">
+        <span class="arrow-icon">›</span>
+      </button>
+      <div class="slider-detail" id="recommended-detail" aria-live="polite"></div>
     </div>
+  </section>
+
+  <section class="section watchlist-section" id="watchlist">
+    <h3>Lista do obejrzenia</h3>
+    <div class="watchlist-empty" id="watchlist-empty">Twoja lista jest pusta. Dodaj filmy, aby je tu zobaczyć.</div>
+    <ul class="watchlist" id="watchlist"></ul>
   </section>
 
   <div class="modal" id="modal">
