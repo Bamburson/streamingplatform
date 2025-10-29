@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ModernFlix</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">ModernFlix</div>
+      <div class="search-center">
+        <input type="search" placeholder="Szukaj filmów..." id="search-input">
+      </div>
+      <button class="profile-btn">
+        <div class="profile-avatar">K</div>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero" id="hero">
+    <div class="hero-grid">
+      <div>
+        <h1 class="hero-title">Odkryj Nowy Wymiar Filmów</h1>
+        <p class="hero-sub">Przenieś się w świat niezapomnianych historii.</p>
+        <div class="cta">
+          <button class="btn btn-play">Odtwórz</button>
+          <button class="btn btn-ghost">Dodaj do listy</button>
+        </div>
+      </div>
+      <div class="hero-image"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h3>Popularne</h3>
+    <div class="slider-wrapper">
+      <button class="arrow-btn arrow-left">←</button>
+      <div class="slider" id="popular-row"></div>
+      <button class="arrow-btn arrow-right">→</button>
+    </div>
+  </section>
+
+  <section class="section">
+    <h3>Nowości</h3>
+    <div class="slider-wrapper">
+      <button class="arrow-btn arrow-left">←</button>
+      <div class="slider" id="new-row"></div>
+      <button class="arrow-btn arrow-right">→</button>
+    </div>
+  </section>
+
+  <section class="section">
+    <h3>Polecane</h3>
+    <div class="slider-wrapper">
+      <button class="arrow-btn arrow-left">←</button>
+      <div class="slider" id="recommended-row"></div>
+      <button class="arrow-btn arrow-right">→</button>
+    </div>
+  </section>
+
+  <div class="modal" id="modal">
+    <div class="modal-panel">
+      <div class="modal-head">
+        <div>
+          <h2 id="modal-title"></h2>
+          <p id="modal-sub"></p>
+        </div>
+        <button class="modal-close">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-video">Wideo</div>
+        <div class="modal-info">
+          <p id="modal-desc"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">© 2025 ModernFlix. Wszelkie prawa zastrzeżone.</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
