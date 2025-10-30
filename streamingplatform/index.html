@@ -3,47 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ModernFlix</title>
+  <title>Flix</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="header">
-    <div class="header-inner">
-      <a href="#hero" class="logo" aria-label="ModernFlix - strona główna">ModernFlix</a>
-      <nav class="main-nav" aria-label="Główne">
-        <a href="#hero" class="nav-link active">Strona Główna</a>
-        <a href="#series" class="nav-link">Seriale</a>
-        <a href="#movies" class="nav-link">Filmy</a>
-        <a href="#watchlist" class="nav-link">Moja lista</a>
-      </nav>
-      <div class="header-actions">
-        <div class="search-wrapper" data-open="false">
-          <button class="icon-btn search-toggle" type="button" aria-expanded="false" aria-controls="header-search" aria-label="Otwórz wyszukiwarkę">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M15.5 14h-.79l-.28-.27a6.471 6.471 0 0 0 1.57-4.23 6.5 6.5 0 1 0-6.5 6.5 6.471 6.471 0 0 0 4.23-1.57l.27.28v.79l4.99 4.99 1.49-1.49L15.5 14Zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14Z" fill="currentColor"/>
-            </svg>
-          </button>
-          <div class="search-popover" id="header-search" role="dialog" aria-modal="false">
-            <input type="search" placeholder="Szukaj filmów..." id="search-input" autocomplete="off">
-          </div>
-        </div>
-        <div class="account-wrapper" data-open="false">
-          <button class="icon-btn account-toggle" type="button" aria-expanded="false" aria-controls="account-panel" aria-label="Otwórz panel konta">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5Zm0 2c-3.33 0-10 1.67-10 5v3h20v-3c0-3.33-6.67-5-10-5Z" fill="currentColor"/>
-            </svg>
-          </button>
-          <div class="account-panel" id="account-panel" role="menu" aria-label="Panel konta">
-            <div class="account-panel-header">
-              <div class="account-name">Katarzyna Kowalska</div>
-              <div class="account-email">katarzyna@modernflix.com</div>
+    <div class="header-shell">
+      <div class="logo-badge">
+        <a href="#hero" class="logo" aria-label="BetterFlix - strona główna">
+          <span class="logo-em">Better</span><span class="logo-rest">Flix</span>
+        </a>
+      </div>
+      <div class="nav-cluster" role="navigation" aria-label="Główne">
+        <nav class="main-nav">
+          <a href="#hero" class="nav-link active">Strona główna</a>
+          <a href="#library" class="nav-link" data-tab-target="popular">Filmy</a>
+          <a href="#library" class="nav-link" data-tab-target="recommended">Seriale</a>
+        </nav>
+        <div class="header-actions">
+          <div class="search-wrapper" data-open="false">
+            <button class="icon-btn search-toggle" type="button" aria-expanded="false" aria-controls="header-search" aria-label="Otwórz wyszukiwarkę">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M15.5 14h-.79l-.28-.27a6.471 6.471 0 0 0 1.57-4.23 6.5 6.5 0 1 0-6.5 6.5 6.471 6.471 0 0 0 4.23-1.57l.27.28v.79l4.99 4.99 1.49-1.49L15.5 14Zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14Z" fill="currentColor"/>
+              </svg>
+            </button>
+            <div class="search-popover" id="header-search" role="dialog" aria-modal="false">
+              <input type="search" placeholder="Szukaj filmów..." id="search-input" autocomplete="off">
             </div>
-            <ul class="account-menu">
-              <li><a href="#">Zarządzaj kontem</a></li>
-              <li><a href="#">Centrum pomocy</a></li>
-            </ul>
-            <button class="logout-btn" type="button">Wyloguj się</button>
+          </div>
+          <div class="account-wrapper" data-open="false">
+            <button class="icon-btn account-toggle" type="button" aria-expanded="false" aria-controls="account-panel" aria-label="Otwórz panel konta">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5Zm0 2c-3.33 0-10 1.67-10 5v3h20v-3c0-3.33-6.67-5-10-5Z" fill="currentColor"/>
+              </svg>
+            </button>
+            <div class="account-panel" id="account-panel" role="menu" aria-label="Panel konta">
+              <div class="account-panel-header">
+                <div class="account-name">Katarzyna Kowalska</div>
+                <div class="account-email">katarzyna@modernflix.com</div>
+              </div>
+              <ul class="account-menu">
+                <li><a href="#">Zarządzaj kontem</a></li>
+                <li><a href="#">Centrum pomocy</a></li>
+              </ul>
+              <button class="logout-btn" type="button">Wyloguj się</button>
+            </div>
           </div>
         </div>
       </div>
@@ -51,65 +57,141 @@
   </header>
 
   <section class="hero" id="hero">
-    <div class="hero-grid">
-      <div>
-        <h1 class="hero-title">Odkryj Nowy Wymiar Filmów</h1>
-        <p class="hero-sub">Przenieś się w świat niezapomnianych historii.</p>
-        <div class="cta">
-          <button class="btn btn-play">Odtwórz</button>
-          <button class="btn btn-ghost">Dodaj do listy</button>
+    <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1400&q=80" aria-hidden="true">
+      <source src="https://cdn.coverr.co/videos/coverr-journey-through-the-city-1650955887028?download=1" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-kicker">Twoja biblioteka premium</p>
+      <h1 class="hero-title">Odkryj nowy świat<br><span>filmów i seriali</span></h1>
+      <p class="hero-sub">Wejdź do katalogu pełnego historii, które wciągają od pierwszej sceny</p>
+    </div>
+    <a href="#library" class="scroll-indicator" aria-label="Przejdź do biblioteki">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M5 9l7 7 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </section>
+
+  <section class="section library" id="library">
+    <div class="library-head">
+      <h3>Eksploruj bibliotekę</h3>
+      <div class="library-tabs" role="tablist" aria-label="Kategorie treści">
+        <button type="button" class="library-tab active" role="tab" aria-selected="true" data-target="new">Nowości</button>
+        <button type="button" class="library-tab" role="tab" aria-selected="false" data-target="popular">Popularne</button>
+        <button type="button" class="library-tab" role="tab" aria-selected="false" data-target="recommended">Polecane</button>
+      </div>
+    </div>
+    <div class="library-panels">
+      <div class="library-panel active" role="tabpanel" data-panel="new">
+        <div class="slider-stack">
+          <div class="slider-wrapper" data-row="new-1">
+            <button class="arrow-btn arrow-left" type="button" aria-label="Przewiń w lewo">
+              <span class="arrow-icon">‹</span>
+            </button>
+            <div class="slider" id="new-row-1"></div>
+            <button class="arrow-btn arrow-right" type="button" aria-label="Przewiń w prawo">
+              <span class="arrow-icon">›</span>
+            </button>
+            <div class="slider-detail" id="new-detail-1" aria-live="polite"></div>
+          </div>
+          <div class="slider-wrapper" data-row="new-2">
+            <button class="arrow-btn arrow-left" type="button" aria-label="Przewiń w lewo">
+              <span class="arrow-icon">‹</span>
+            </button>
+            <div class="slider" id="new-row-2"></div>
+            <button class="arrow-btn arrow-right" type="button" aria-label="Przewiń w prawo">
+              <span class="arrow-icon">›</span>
+            </button>
+            <div class="slider-detail" id="new-detail-2" aria-live="polite"></div>
+          </div>
+          <div class="slider-wrapper" data-row="new-3">
+            <button class="arrow-btn arrow-left" type="button" aria-label="Przewiń w lewo">
+              <span class="arrow-icon">‹</span>
+            </button>
+            <div class="slider" id="new-row-3"></div>
+            <button class="arrow-btn arrow-right" type="button" aria-label="Przewiń w prawo">
+              <span class="arrow-icon">›</span>
+            </button>
+            <div class="slider-detail" id="new-detail-3" aria-live="polite"></div>
+          </div>
         </div>
       </div>
-      <div class="hero-image"></div>
-    </div>
-  </section>
-
-  <section class="section" id="series">
-    <h3>Popularne</h3>
-    <div class="slider-wrapper" data-row="popular">
-      <button class="arrow-btn arrow-left" type="button" aria-label="Przewiń w lewo">
-        <span class="arrow-icon">‹</span>
-      </button>
-      <div class="slider" id="popular-row"></div>
-      <button class="arrow-btn arrow-right" type="button" aria-label="Przewiń w prawo">
-        <span class="arrow-icon">›</span>
-      </button>
-      <div class="slider-detail" id="popular-detail" aria-live="polite"></div>
-    </div>
-  </section>
-
-  <section class="section" id="movies">
-    <h3>Nowości</h3>
-    <div class="slider-wrapper" data-row="new">
-      <button class="arrow-btn arrow-left" type="button" aria-label="Przewiń w lewo">
-        <span class="arrow-icon">‹</span>
-      </button>
-      <div class="slider" id="new-row"></div>
-      <button class="arrow-btn arrow-right" type="button" aria-label="Przewiń w prawo">
-        <span class="arrow-icon">›</span>
-      </button>
-      <div class="slider-detail" id="new-detail" aria-live="polite"></div>
-    </div>
-  </section>
-
-  <section class="section" id="recommended">
-    <h3>Polecane</h3>
-    <div class="slider-wrapper" data-row="recommended">
-      <button class="arrow-btn arrow-left" type="button" aria-label="Przewiń w lewo">
-        <span class="arrow-icon">‹</span>
-      </button>
-      <div class="slider" id="recommended-row"></div>
-      <button class="arrow-btn arrow-right" type="button" aria-label="Przewiń w prawo">
-        <span class="arrow-icon">›</span>
-      </button>
-      <div class="slider-detail" id="recommended-detail" aria-live="polite"></div>
+      <div class="library-panel" role="tabpanel" data-panel="popular" hidden>
+        <div class="slider-stack">
+          <div class="slider-wrapper" data-row="popular-1">
+            <button class="arrow-btn arrow-left" type="button" aria-label="Przewiń w lewo">
+              <span class="arrow-icon">‹</span>
+            </button>
+            <div class="slider" id="popular-row-1"></div>
+            <button class="arrow-btn arrow-right" type="button" aria-label="Przewiń w prawo">
+              <span class="arrow-icon">›</span>
+            </button>
+            <div class="slider-detail" id="popular-detail-1" aria-live="polite"></div>
+          </div>
+          <div class="slider-wrapper" data-row="popular-2">
+            <button class="arrow-btn arrow-left" type="button" aria-label="Przewiń w lewo">
+              <span class="arrow-icon">‹</span>
+            </button>
+            <div class="slider" id="popular-row-2"></div>
+            <button class="arrow-btn arrow-right" type="button" aria-label="Przewiń w prawo">
+              <span class="arrow-icon">›</span>
+            </button>
+            <div class="slider-detail" id="popular-detail-2" aria-live="polite"></div>
+          </div>
+          <div class="slider-wrapper" data-row="popular-3">
+            <button class="arrow-btn arrow-left" type="button" aria-label="Przewiń w lewo">
+              <span class="arrow-icon">‹</span>
+            </button>
+            <div class="slider" id="popular-row-3"></div>
+            <button class="arrow-btn arrow-right" type="button" aria-label="Przewiń w prawo">
+              <span class="arrow-icon">›</span>
+            </button>
+            <div class="slider-detail" id="popular-detail-3" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+      <div class="library-panel" role="tabpanel" data-panel="recommended" hidden>
+        <div class="slider-stack">
+          <div class="slider-wrapper" data-row="recommended-1">
+            <button class="arrow-btn arrow-left" type="button" aria-label="Przewiń w lewo">
+              <span class="arrow-icon">‹</span>
+            </button>
+            <div class="slider" id="recommended-row-1"></div>
+            <button class="arrow-btn arrow-right" type="button" aria-label="Przewiń w prawo">
+              <span class="arrow-icon">›</span>
+            </button>
+            <div class="slider-detail" id="recommended-detail-1" aria-live="polite"></div>
+          </div>
+          <div class="slider-wrapper" data-row="recommended-2">
+            <button class="arrow-btn arrow-left" type="button" aria-label="Przewiń w lewo">
+              <span class="arrow-icon">‹</span>
+            </button>
+            <div class="slider" id="recommended-row-2"></div>
+            <button class="arrow-btn arrow-right" type="button" aria-label="Przewiń w prawo">
+              <span class="arrow-icon">›</span>
+            </button>
+            <div class="slider-detail" id="recommended-detail-2" aria-live="polite"></div>
+          </div>
+          <div class="slider-wrapper" data-row="recommended-3">
+            <button class="arrow-btn arrow-left" type="button" aria-label="Przewiń w lewo">
+              <span class="arrow-icon">‹</span>
+            </button>
+            <div class="slider" id="recommended-row-3"></div>
+            <button class="arrow-btn arrow-right" type="button" aria-label="Przewiń w prawo">
+              <span class="arrow-icon">›</span>
+            </button>
+            <div class="slider-detail" id="recommended-detail-3" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="section watchlist-section" id="watchlist">
     <h3>Lista do obejrzenia</h3>
     <div class="watchlist-empty" id="watchlist-empty">Twoja lista jest pusta. Dodaj filmy, aby je tu zobaczyć.</div>
-    <ul class="watchlist" id="watchlist"></ul>
+    <ul class="watchlist" id="watchlist-list"></ul>
   </section>
 
   <div class="modal" id="modal">
